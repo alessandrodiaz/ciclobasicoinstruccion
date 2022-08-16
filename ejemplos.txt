@@ -1,3 +1,24 @@
+Obtener 200 como resultado sin sumar el valor en D1400
+y almacenar en D500
+
+SET D700 10 NULL
+SET D800 20 NULL
+SET D1000 60 NULL
+SET D1200 80 NULL
+SET D1400 30 NULL
+ADD D700 D800 D40
+ADD D1000 D1200 D10
+ADD D10 D40 NULL
+MOV D1400 D20 NULL
+ADD D20 NULL NULL
+STR D500 NULL NULL
+SHW D500 NULL NULL
+END NULL NULL NULL
+
+200
+
+-----------------------
+
 Obtener 100 como resultado
 y almacenar en D1
 
