@@ -160,8 +160,6 @@ def do_operation():
 def do_inc_dec():
     global alu, mar, mdr, acumulador
 
-    # acumulador = memoria_principal[int(extraer_direccion(unidad_control.split()[1]))]
-    # alu = acumulador
     mar = extraer_direccion(unidad_control.split()[1])
     mdr = memoria_principal[int(mar)]
     acumulador = mdr
@@ -171,20 +169,19 @@ def do_inc_dec():
     elif unidad_control.split()[0] == "DEC":
         alu = acumulador - 1
 
-    # status()
-    memoria_principal[int(extraer_direccion(unidad_control.split()[1]))] = alu
+    acumulador = alu
+    memoria_principal[int(extraer_direccion(unidad_control.split()[1]))] = acumulador
 
 
 # Mover. Cargar el valor de D2 a D10 y limpiar D2. MOV D2 D10 NULL.
 def do_mov():
-    global mar, mdr, acumulador
+    global mar, mdr
     mar = extraer_direccion(unidad_control.split()[1])
     mdr = memoria_principal[int(mar)]
-    acumulador = mdr
     memoria_principal[int(mar)] = 0
 
     mar = extraer_direccion(unidad_control.split()[2])
-    memoria_principal[int(mar)] = acumulador
+    memoria_principal[int(mar)] = mdr
 
 
 # STR: Lee lo que hay en el acumulador y lo guarda en la dirección D indicada
