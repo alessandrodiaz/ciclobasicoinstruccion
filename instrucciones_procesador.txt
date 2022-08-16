@@ -1,0 +1,42 @@
+Juego de instrucciones del procesador del simulador.
+
+SET:  
+SET D1 X NULL NULL, Almacenar el valor de X en la dirección D1 en la memoria principal.
+
+ADD: 
+ADD D1 NULL NULL, Suma el valor de D1 al valor cargado en el acumulador.
+ADD D1 D3 NULL, Carga el valor de D1 en el acumulador y lo suma con el valor en D3
+ADD D1 D3 D4, Igual al anterior, pero pone el resultado en D4.
+
+SUB:  
+Hace lo mismo que ADD (sumar) pero resta. 
+SUB D1 NULL NULL, SUB D1 D3 NULL, SUB D1 D2 D3.
+
+MUL: Multiplicación. 
+DIV D1 NULL NULL, DIV D1 D3 NULL, DIV D1 D2 D3.
+
+DIV: División. 
+DIV D1 NULL NULL, DIV D1 D3 NULL, DIV D1 D2 D3.
+
+INC: Incrementar en 1 el valor de D. 
+INC D3 NULL NULL.
+
+DEC: Decrementar en 1 el valor de D. 
+DEC D3 NULL NULL.
+
+MOV: Mover. Cargar el valor de D2 a D10 y limpiar D2. 
+MOV D2 D10 NULL.
+
+LDR: Cargar. Toma el valor en D y lo pone en el acumulador. 
+LDR D3 NULL NULL.
+
+STR: Almacenar. Lee lo que hay en el acumulador y lo guarda en la dirección D indicada. 
+STR D3 NULL NULL.
+
+BEQ: Carga el valor de D10, si la resta con el acumulador resulta en cero (valores iguales), lo pone en D10. 
+BEQ D10 NULL NULL.
+
+SHW: Muestra el valor en la dirección o registro indicado. 
+SHW D2, SHW ACC, SHW ICR, SHW MAR, SHW MDR, SHW UC.
+
+END: Finaliza de leer la instrucción.
